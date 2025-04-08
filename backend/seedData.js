@@ -1,13 +1,12 @@
 /** @format */
 
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
 // Connect to MongoDB
 mongoose
-	.connect("mongodb://127.0.0.1:27017/4semEcommerce", {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
+	.connect(process.env.MONGODB_URL)
 	.then(() => console.log("MongoDB connected"))
 	.catch((err) => console.error(err));
 
