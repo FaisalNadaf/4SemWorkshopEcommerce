@@ -13,14 +13,7 @@ const { Cart } = require("./model/Cart");
 const dotenv = require("dotenv");
 dotenv.config();
 
-app.use(cors(
-	{
-		origin: "https://faisal-4semecommerce.netlify.app/",
-		methods: "*",
-		credentials: true,
-		
-	}),
-); 
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 

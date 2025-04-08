@@ -73,7 +73,7 @@ const images = {
 // Generate dummy products
 const generateProducts = () => {
 	const products = [];
-	for (let i = 0; i < 40; i++) {
+	for (let i = 0; i < 10; i++) {
 		const category = categories[Math.floor(Math.random() * categories.length)];
 		const brand = brands[Math.floor(Math.random() * brands.length)];
 		const price = Math.floor(Math.random() * 3000) + 299;
@@ -86,7 +86,7 @@ const generateProducts = () => {
 			stock,
 			brand,
 			description: `High-quality ${category.toLowerCase()} by ${brand}, perfect for daily wear.`,
-			user: "67f250eb52be25213f15a367", // Placeholder ObjectId
+			user: "67f4cb205dad87d4ce355dbf", // Placeholder ObjectId
 		});
 	}
 	return products;
@@ -94,7 +94,7 @@ const generateProducts = () => {
 
 // Save to MongoDB
 const seedDB = async () => {
-	await Product.deleteMany({});
+	// await Product.deleteMany({});
 	const sampleProducts = generateProducts();
 	await Product.insertMany(sampleProducts);
 	console.log("Dummy products added successfully!");

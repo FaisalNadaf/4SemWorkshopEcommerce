@@ -1,6 +1,6 @@
 /** @format */
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://foursemworkshopecommerce.onrender.com";
 
 export async function deleteProduct(product) {
 	const response = await fetch(`${API_URL}/product/delete/${product}`, {
@@ -68,7 +68,7 @@ export async function updateProduct(id, productData) {
 	}
 
 	const data = await response.json();
-	
+
 	console.log("✌️data --->", data);
 	return data;
 }
