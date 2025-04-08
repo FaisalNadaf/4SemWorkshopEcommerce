@@ -10,13 +10,15 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { Product } = require("./model/Product");
 const { Cart } = require("./model/Cart");
+const dotenv = require("dotenv");
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
 mongoose
-	.connect("mongodb://127.0.0.1:27017/4semEcommerce")
+	.connect(process.env.MONGODB_URL)
 	.then(() => {
 		console.log("db is connected");
 	})
